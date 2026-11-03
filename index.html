@@ -235,6 +235,21 @@
 .ftlp .ft-plan-list{padding:36px}
 .ftlp .ft-plan-list .ft-reasons{grid-template-columns:minmax(0,1fr)}
 
+/* Sistemas: vitrine de projetos */
+.ftlp .ft-projs{display:grid;gap:80px;margin-top:56px}
+.ftlp .ft-proj{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start}
+.ftlp .ft-proj-txt .ft-h3{margin-top:10px;font-size:26px;line-height:1.2}
+.ftlp .ft-proj-txt p{margin-top:14px;font-size:16px;color:var(--ft-slate)}
+.ftlp .ft-shot{margin:0;border:1px solid var(--ft-line);border-radius:10px;overflow:hidden;background:#fff;box-shadow:var(--ft-shadow-lg)}
+.ftlp .ft-shot-bar{display:flex;gap:6px;padding:10px 12px;border-bottom:1px solid var(--ft-line);background:var(--ft-soft)}
+.ftlp .ft-shot-bar i{width:9px;height:9px;border-radius:50%;background:#d5dbe3}
+.ftlp .ft-shot img,.ftlp .ft-thumbs img,.ftlp .ft-phones img{display:block;width:100%;height:auto}
+.ftlp .ft-thumbs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+.ftlp .ft-thumbs a{display:block;border:1px solid var(--ft-line);border-radius:8px;overflow:hidden;transition:border-color .15s}
+.ftlp .ft-thumbs a:hover{border-color:var(--ft-btn-line)}
+.ftlp .ft-phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:560px;margin-left:auto}
+.ftlp .ft-phones a{display:block;border:6px solid #111;border-radius:24px;overflow:hidden;background:#111;box-shadow:var(--ft-shadow)}
+
 @media (max-width:1240px) and (min-width:761px){
   .ftlp .ft-hero .ft-ribbon{right:-260px;opacity:.8}
   .ftlp .ft-final .ft-ribbon{right:-300px;opacity:.8}
@@ -268,6 +283,10 @@
   .ftlp .ft-foot{padding:24px 20px 40px}
   .ftlp .ft-ba-knob{width:36px;height:36px;margin:-18px 0 0 -18px}
   .ftlp .ft-plan{grid-template-columns:minmax(0,1fr)}
+  .ftlp .ft-proj{grid-template-columns:minmax(0,1fr);gap:24px}
+  .ftlp .ft-projs{gap:56px}
+  .ftlp .ft-phones{gap:10px;margin-left:0}
+  .ftlp .ft-phones a{border-width:4px;border-radius:16px}
   .ftlp .ft-plan-price{border-right:0;border-bottom:1px solid var(--ft-line)}
   .ftlp .ft-plan-price,.ftlp .ft-plan-list{padding:24px 22px}
 }
@@ -299,6 +318,9 @@
 .ftlp .ft-pager a small{display:block;font-size:13px;color:var(--ft-slate);margin-bottom:4px}
 .ftlp .ft-pager a b{font:400 20px/1.2 var(--ft-display);color:var(--ft-accent)}
 .ftlp .ft-pager .is-next{grid-column:2;text-align:right}
+@media (max-width:1180px){
+  .ftlp .ft-logo span{display:none}
+}
 @media (max-width:980px){
   .ftlp .ft-pages{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ftlp .ft-menu-btn{display:inline-flex}
@@ -329,6 +351,7 @@
         <a href="plano/">Plano</a>
         <a href="parceria/">Parceria</a>
         <a href="artes/">Artes</a>
+        <a href="sistemas/">Sistemas</a>
       </nav>
     </div>
   </header>
@@ -360,7 +383,7 @@
 
   <div class="ft-frame">
     <section class="ft-sec">
-      <h2 class="ft-h2"><span class="ft-ink">O que tem neste documento.</span> <span class="ft-soft">Sete páginas, na ordem em que vale a pena ler.</span></h2>
+      <h2 class="ft-h2"><span class="ft-ink">O que tem neste documento.</span> <span class="ft-soft">Oito páginas, na ordem em que vale a pena ler.</span></h2>
       <div class="ft-pages">
         <a class="ft-pcard" href="diagnostico/"><span class="ft-label">01</span><b>Diagnóstico</b><span>O que a análise externa encontrou no site e na página do curso.</span><i>Abrir <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
         <a class="ft-pcard" href="estrategia/"><span class="ft-label">02</span><b>Estratégia</b><span>Três motores de receita, a escada de valor e o funil que liga tudo.</span><i>Abrir <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
@@ -369,6 +392,7 @@
         <a class="ft-pcard" href="plano/"><span class="ft-label">05</span><b>Plano</b><span>Próximos passos, o que acompanhar toda semana e o que a diretoria precisa decidir.</span><i>Abrir <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
         <a class="ft-pcard" href="parceria/"><span class="ft-label">06</span><b>Parceria</b><span>30% de comissão sobre cada venda. A gente só ganha quando a Futuro Tech vende.</span><i>Abrir <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
         <a class="ft-pcard" href="artes/"><span class="ft-label">07</span><b>Artes</b><span>Antes e depois do banner do Vestibular Online e proposta mensal de artes.</span><i>Abrir <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        <a class="ft-pcard" href="sistemas/"><span class="ft-label">08</span><b>Sistemas</b><span>Parceria em aberto para criar sistemas sob medida, com exemplos já desenvolvidos.</span><i>Abrir <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
       </div>
     </section>
   </div>
@@ -400,6 +424,6 @@
   });
 })();
 </script>
-<script>(function(){var m={'ft-diagnostico':'diagnostico','ft-pagina':'diagnostico','ft-motores':'estrategia','ft-escada':'estrategia','ft-funil':'estrategia','ft-trafego':'trafego','ft-simulador':'trafego','ft-institucional':'institucional','ft-passos':'plano','ft-indicadores':'plano','ft-decisoes':'plano','ft-parceria':'parceria','ft-artes':'artes'};var h=location.hash.slice(1);if(m[h])location.replace(m[h]+'/#'+h);})();</script>
+<script>(function(){var m={'ft-diagnostico':'diagnostico','ft-pagina':'diagnostico','ft-motores':'estrategia','ft-escada':'estrategia','ft-funil':'estrategia','ft-trafego':'trafego','ft-simulador':'trafego','ft-institucional':'institucional','ft-passos':'plano','ft-indicadores':'plano','ft-decisoes':'plano','ft-parceria':'parceria','ft-artes':'artes','ft-sistemas':'sistemas'};var h=location.hash.slice(1);if(m[h])location.replace(m[h]+'/#'+h);})();</script>
 </body>
 </html>
