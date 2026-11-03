@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Visão Digital · Futuro Tech</title>
-<meta name="description" content="Visão estratégica para a Futuro Tech: diagnóstico, escada de valor, funil, tráfego pago, simulador de faturamento e próximos passos.">
+<meta name="description" content="Visão estratégica para a Futuro Tech: diagnóstico, estratégia, tráfego, plano, parceria e artes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500&display=swap">
@@ -268,13 +268,64 @@
   .ftlp .ft-plan-price,.ftlp .ft-plan-list{padding:24px 22px}
 }
 </style>
-
+<style>
+/* Site multipágina: menu, cabeçalho de página, atalhos e paginação */
+.ftlp .ft-top{position:sticky;top:0;z-index:20}
+.ftlp .ft-sec{scroll-margin-top:84px}
+.ftlp .ft-nav{display:flex;align-items:center;gap:2px}
+.ftlp .ft-nav a{font-size:14px;color:var(--ft-ink);padding:7px 11px;border-radius:6px;white-space:nowrap;transition:color .15s,background .15s}
+.ftlp .ft-nav a:hover{color:var(--ft-purple)}
+.ftlp .ft-nav a[aria-current="page"]{color:var(--ft-purple);background:var(--ft-chip);font-weight:500}
+.ftlp .ft-menu-btn{display:none;align-items:center;gap:8px;font:500 14px/1 var(--ft-body);color:var(--ft-ink);background:#fff;border:1px solid var(--ft-line);border-radius:6px;padding:9px 12px;cursor:pointer}
+.ftlp .ft-menu-btn:focus-visible,.ftlp .ft-nav a:focus-visible{outline:2px solid var(--ft-purple);outline-offset:2px}
+.ftlp .ft-pagehead{border-bottom:1px solid var(--ft-line);position:relative;overflow:hidden}
+.ftlp .ft-pagehead .ft-frame{padding:96px 40px 72px}
+.ftlp .ft-pagehead .ft-h1{font-size:clamp(34px,5vw,54px);max-width:860px}
+.ftlp .ft-sec > h1.ft-h2{margin:0}
+.ftlp .ft-pages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:44px}
+.ftlp .ft-pcard{display:flex;flex-direction:column;gap:10px;min-height:190px;padding:26px;border:1px solid var(--ft-line);border-radius:8px;background:#fff;color:var(--ft-ink);transition:border-color .15s,box-shadow .15s,transform .15s}
+.ftlp .ft-pcard:hover{border-color:var(--ft-btn-line);box-shadow:var(--ft-shadow);transform:translateY(-2px)}
+.ftlp .ft-pcard .ft-label{font-variant-numeric:tabular-nums}
+.ftlp .ft-pcard b{font:400 22px/1.2 var(--ft-display);letter-spacing:-.01em}
+.ftlp .ft-pcard span:not(.ft-label){font-size:15px;color:var(--ft-slate)}
+.ftlp .ft-pcard i{margin-top:auto;display:inline-flex;align-items:center;gap:6px;font-style:normal;font-size:14px;font-weight:500;color:var(--ft-purple)}
+.ftlp .ft-pager{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:40px;border-bottom:1px solid var(--ft-line)}
+.ftlp .ft-pager a{display:block;padding:20px 24px;border:1px solid var(--ft-line);border-radius:8px;background:#fff;color:var(--ft-ink);transition:border-color .15s}
+.ftlp .ft-pager a:hover{border-color:var(--ft-btn-line)}
+.ftlp .ft-pager a small{display:block;font-size:13px;color:var(--ft-slate);margin-bottom:4px}
+.ftlp .ft-pager a b{font:400 20px/1.2 var(--ft-display);color:var(--ft-purple)}
+.ftlp .ft-pager .is-next{grid-column:2;text-align:right}
+@media (max-width:980px){
+  .ftlp .ft-pages{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ftlp .ft-menu-btn{display:inline-flex}
+  .ftlp .ft-nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:2px;padding:10px 20px 18px;background:#fff;border-bottom:1px solid var(--ft-line);box-shadow:0 18px 30px -18px rgba(50,50,93,.35)}
+  .ftlp .ft-top.is-open .ft-nav{display:flex}
+  .ftlp .ft-nav a{padding:12px}
+}
+@media (max-width:760px){
+  .ftlp .ft-pagehead .ft-frame{padding:64px 20px 48px}
+  .ftlp .ft-pages,.ftlp .ft-pager{grid-template-columns:minmax(0,1fr)}
+  .ftlp .ft-pager{padding:24px 20px}
+  .ftlp .ft-pager .is-next{grid-column:auto}
+  .ftlp .ft-logo span{display:none}
+}
+</style>
 <div class="ftlp">
 
   <header class="ft-top">
     <div class="ft-top-in">
-      <a class="ft-logo" href="https://futuroedtech.com.br/"><b>Futuro Tech</b><span>visão estratégica para o digital</span></a>
-      <a class="ft-btn ft-btn-primary" href="#ft-simulador">Abrir o simulador <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="ft-logo" href="./"><b>Futuro Tech</b><span>visão estratégica para o digital</span></a>
+      <button class="ft-menu-btn" type="button" aria-expanded="false" aria-controls="ft-nav">Menu <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4h10M2 7h10M2 10h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+      <nav class="ft-nav" id="ft-nav" aria-label="Menu principal">
+        <a href="./" aria-current="page">Início</a>
+        <a href="diagnostico/">Diagnóstico</a>
+        <a href="estrategia/">Estratégia</a>
+        <a href="trafego/">Tráfego</a>
+        <a href="institucional/">Institucional</a>
+        <a href="plano/">Plano</a>
+        <a href="parceria/">Parceria</a>
+        <a href="artes/">Artes</a>
+      </nav>
     </div>
   </header>
 
@@ -285,10 +336,10 @@
       <p class="ft-eyebrow">Visão estratégica · Faculdade do Futuro <span>outubro de 2026</span></p>
       <h1 class="ft-h1"><span class="ft-ink">Como transformar a Futuro Tech em receita previsível na internet.</span> <span class="ft-soft">Professores, o nome de uma faculdade credenciada pelo MEC e 300 alunos na primeira turma já existem. Falta o sistema que transforma isso em receita todo mês.</span></h1>
       <div class="ft-cta-row">
-        <a class="ft-btn ft-btn-primary" href="#ft-simulador">Ver o simulador <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a class="ft-btn ft-btn-ghost" href="#ft-passos">Próximos passos</a>
+        <a class="ft-btn ft-btn-primary" href="trafego/#ft-simulador">Ver o simulador <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="ft-btn ft-btn-ghost" href="plano/#ft-passos">Ver o plano de ação</a>
       </div>
-      <p class="ft-micro">Como montar esse sistema, por onde começar e quanto custa testar.</p>
+      <p class="ft-micro">Navegue pelo menu ou pelos atalhos abaixo.</p>
     </div>
   </section>
 
@@ -300,535 +351,22 @@
         <li><b>MEC</b><span>faculdade credenciada por trás de cada certificado</span></li>
         <li><b>Educação inclusiva</b><span>foco da primeira fase</span></li>
       </ul>
-      <nav class="ft-index" aria-label="Neste documento">
-        <a href="#ft-diagnostico">Diagnóstico</a>
-        <a href="#ft-pagina">Página do curso</a>
-        <a href="#ft-motores">Três motores</a>
-        <a href="#ft-escada">Escada de valor</a>
-        <a href="#ft-funil">Funil</a>
-        <a href="#ft-trafego">Tráfego pago</a>
-        <a href="#ft-simulador">Simulador</a>
-        <a href="#ft-institucional">Institucional</a>
-        <a href="#ft-passos">Próximos passos</a>
-        <a href="#ft-indicadores">Indicadores</a>
-        <a href="#ft-decisoes">Decisões</a>
-        <a href="#ft-parceria">Parceria</a>
-        <a href="#ft-artes">Artes</a>
-      </nav>
     </div>
   </section>
 
   <div class="ft-frame">
-
-    <!-- DIAGNÓSTICO -->
-    <section class="ft-sec" id="ft-diagnostico">
-      <h2 class="ft-h2"><span class="ft-ink">A demanda existe.</span> <span class="ft-soft">As páginas ainda não foram feitas para vender.</span></h2>
-      <p class="ft-intro">Analisamos a home e a página do curso de 200h em 30 de outubro de 2026. O curso tem demanda comprovada e bons professores. A home, a página de vendas e o que acontece depois da compra ainda não trabalham juntos para vender.</p>
-      <div class="ft-two">
-        <div class="ft-box">
-          <h3 class="ft-h3">Já funciona</h3>
-          <ul class="ft-checks">
-            <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Corpo docente qualificado e uma boa frase de promessa: “saber exatamente o que fazer na segunda-feira de manhã”.</li>
-            <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Gancho de mercado forte: a mudança na legislação sobre o profissional de apoio cria uma demanda que já existe.</li>
-            <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Checkout próprio (FuturoPay) com Pix e 10× no cartão, e preço de entrada acessível.</li>
-            <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Prova de demanda: mais de 300 alunos na primeira turma, com lançamento na Câmara Municipal de Manhuaçu.</li>
-            <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Marca-mãe com credibilidade: Escola do Futuro, Faculdade do Futuro e o podcast Foco &amp; Propósito.</li>
-          </ul>
-        </div>
-        <div class="ft-box">
-          <h3 class="ft-h3">Trava o faturamento</h3>
-          <ul class="ft-checks">
-            <li><span class="ft-chip ft-chip-no"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>A home é um catálogo institucional que fala com seis públicos ao mesmo tempo. Quem chega por um anúncio de inclusão encontra teologia e comércio exterior logo abaixo.</li>
-            <li><span class="ft-chip ft-chip-no"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>Cinco cursos aparecem como “em breve”, sem data. Para quem chega de fora, parece vitrine vazia.</li>
-            <li><span class="ft-chip ft-chip-no"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>Nenhum depoimento dos 300 alunos da primeira turma, a prova social mais barata disponível.</li>
-            <li><span class="ft-chip ft-chip-no"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>Nenhum link para Instagram, YouTube ou LinkedIn, e nenhum conteúdo para atrair quem ainda não conhece a marca.</li>
-            <li><span class="ft-chip ft-chip-no"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>Não identificamos pixel de anúncios na análise externa. Sem rastreamento, tráfego pago vira aposta. (Confirmar com o time técnico.)</li>
-            <li><span class="ft-chip ft-chip-no"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>Nada acontece depois da compra. Quem paga R$ 199 não recebe nenhuma oferta de continuidade.</li>
-            <li><span class="ft-chip ft-chip-no"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>A home anuncia uma “Pós em Educação Inclusiva (AEE e PEI)” como em breve. Se ela não está nos planos, precisa sair do ar, porque anunciar uma pós que não existe pesa contra a credibilidade de uma faculdade credenciada.</li>
-            <li><span class="ft-chip ft-chip-no"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>Cada turma é aberta manualmente, uma de cada vez, e a receita chega em picos.</li>
-          </ul>
-        </div>
+    <section class="ft-sec">
+      <h2 class="ft-h2"><span class="ft-ink">O que tem neste documento.</span> <span class="ft-soft">Sete páginas, na ordem em que vale a pena ler.</span></h2>
+      <div class="ft-pages">
+        <a class="ft-pcard" href="diagnostico/"><span class="ft-label">01</span><b>Diagnóstico</b><span>O que a análise externa encontrou no site e na página do curso.</span><i>Abrir <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        <a class="ft-pcard" href="estrategia/"><span class="ft-label">02</span><b>Estratégia</b><span>Três motores de receita, a escada de valor e o funil que liga tudo.</span><i>Abrir <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        <a class="ft-pcard" href="trafego/"><span class="ft-label">03</span><b>Tráfego</b><span>Como investir em mídia na ordem certa e quanto a formação pode faturar.</span><i>Abrir <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        <a class="ft-pcard" href="institucional/"><span class="ft-label">04</span><b>Institucional</b><span>Turmas fechadas para prefeituras e escolas, com custo de mídia perto de zero.</span><i>Abrir <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        <a class="ft-pcard" href="plano/"><span class="ft-label">05</span><b>Plano</b><span>Próximos passos, o que acompanhar toda semana e o que a diretoria precisa decidir.</span><i>Abrir <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        <a class="ft-pcard" href="parceria/"><span class="ft-label">06</span><b>Parceria</b><span>30% de comissão sobre cada venda. A gente só ganha quando a Futuro Tech vende.</span><i>Abrir <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        <a class="ft-pcard" href="artes/"><span class="ft-label">07</span><b>Artes</b><span>Antes e depois do banner do Vestibular Online e proposta mensal de artes.</span><i>Abrir <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
       </div>
     </section>
-
-    <!-- PÁGINA DO CURSO -->
-    <section class="ft-sec" id="ft-pagina">
-      <h2 class="ft-h2"><span class="ft-ink">A página do curso precisa de outra ordem.</span> <span class="ft-soft">O material já existe. Ela pede dinheiro antes de mostrar a dor, prova pouco e oferece saídas demais.</span></h2>
-      <div class="ft-two">
-        <div class="ft-box">
-          <h3 class="ft-h3">Como está hoje</h3>
-          <ul class="ft-checks">
-            <li><span class="ft-chip ft-chip-no"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>Preço e botão de compra no topo, antes de qualquer argumento.</li>
-            <li><span class="ft-chip ft-chip-no"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>Um formulário de “quero que me chamem” logo na terceira dobra, competindo com a compra.</li>
-            <li><span class="ft-chip ft-chip-no"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>Quatro saídas ao mesmo tempo: checkout, formulário, WhatsApp e assistente virtual.</li>
-            <li><span class="ft-chip ft-chip-no"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>O bloco da lei vem antes da dor do aluno, cita dois decretos diferentes (12.773/2025 e 12.686/2025) e traz um número sem fonte.</li>
-            <li><span class="ft-chip ft-chip-no"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>Método e conteúdo aparecem antes dos resultados que o aluno vai ter.</li>
-            <li><span class="ft-chip ft-chip-no"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>Seis biografias completas ocupam mais espaço que a prova social.</li>
-            <li><span class="ft-chip ft-chip-no"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>Nenhum depoimento, nenhum bônus, nenhuma seção de “para quem não é”. A garantia de 7 dias fica escondida no fim.</li>
-          </ul>
-        </div>
-        <div class="ft-box">
-          <h3 class="ft-h3">Ordem proposta</h3>
-          <ol class="ft-num">
-            <li>Headline com o resultado, vídeo curto do coordenador e um único botão</li>
-            <li>Prova rápida: 300+ alunos, lançamento na Câmara, selo da Faculdade do Futuro</li>
-            <li>A dor: situações reais de sala que o profissional não sabe resolver</li>
-            <li>A lei em três linhas, com link para o texto oficial</li>
-            <li>O que a pessoa vai saber fazer ao final</li>
-            <li>Como funciona: 12 semanas, aulas ao vivo, tutor de IA, portfólio e certificado</li>
-            <li>Conteúdo semana a semana, em blocos que abrem e fecham</li>
-            <li>Depoimentos em vídeo da primeira turma</li>
-            <li>Professores em cartões curtos</li>
-            <li>Oferta completa: o que está incluído, bônus, 10× R$ 25 ou R$ 199 no Pix</li>
-            <li>Garantia de 7 dias em destaque</li>
-            <li>Para quem é e para quem não é</li>
-            <li>Perguntas frequentes e botão final com o prazo da turma</li>
-          </ol>
-        </div>
-      </div>
-      <p class="ft-note">O mesmo botão de inscrição se repete ao longo da página. O WhatsApp fica como botão flutuante discreto para quem tem dúvida.</p>
-    </section>
-
-    <!-- TRÊS MOTORES -->
-    <section class="ft-sec" id="ft-motores">
-      <h2 class="ft-h2"><span class="ft-ink">Uma faculdade fatura no digital com três motores.</span> <span class="ft-soft">E eles se alimentam entre si.</span></h2>
-      <p class="ft-intro">Infoprodutores costumam depender de lançamentos: muito esforço e receita em picos. Uma faculdade tem duas vantagens que eles não têm: certificados com o nome de uma instituição credenciada e relacionamento com redes de ensino.</p>
-      <div class="ft-bento">
-        <article class="ft-card">
-          <div class="ft-card-head">
-            <span class="ft-label">Atrai</span>
-            <h3 class="ft-h3">Formações curtas</h3>
-            <span class="ft-ticket">R$ 97 a R$ 497</span>
-            <p>Trazem alunos novos com baixo risco de compra. O objetivo é que a receita delas pague o anúncio.</p>
-            <span class="ft-now">Hoje: Formação de Apoio 200h, R$ 199.</span>
-          </div>
-          <div class="ft-vis ft-vis-orange">
-            <div class="ft-ui" aria-hidden="true">
-              <div class="ft-ui-title"><span class="ft-avatar">F</span><span>Formação de Apoio 200h<small>Pagamento único</small></span></div>
-              <ul class="ft-ui-list">
-                <li>Turma 2 <i class="ok">inscrições abertas</i></li>
-                <li>Pix à vista <i>R$ 199</i></li>
-                <li>Cartão <i>10× R$ 25</i></li>
-              </ul>
-            </div>
-          </div>
-        </article>
-        <article class="ft-card is-core">
-          <div class="ft-card-head">
-            <span class="ft-label">Dá lucro</span>
-            <h3 class="ft-h3">Continuidade</h3>
-            <span class="ft-ticket">Clube mensal + formações complementares</span>
-            <p>Quem já comprou e gostou compra de novo sem custo de anúncio. Um clube mensal com modelos, aulas de atualização e comunidade, mais formações curtas de aprofundamento com certificado da faculdade.</p>
-            <span class="ft-now">Hoje: não existe. É a peça que falta.</span>
-          </div>
-          <div class="ft-vis ft-vis-violet">
-            <div class="ft-ui" aria-hidden="true">
-              <div class="ft-ui-title"><span class="ft-avatar">C</span><span>Clube do Profissional de Apoio<small>Cobrado mensalmente · exemplo</small></span></div>
-              <p class="ft-ui-big">R$ 39 <small>/mês</small></p>
-              <div class="ft-meter" style="--w:55%"><span><em style="font-style:normal">Permanência média</em><em style="font-style:normal">8 meses</em></span><div></div></div>
-            </div>
-          </div>
-        </article>
-        <article class="ft-card">
-          <div class="ft-card-head">
-            <span class="ft-label">Escala sem anúncio</span>
-            <h3 class="ft-h3">Turmas institucionais</h3>
-            <span class="ft-ticket">Contratos de R$ 10 mil ou mais</span>
-            <p>Prefeituras, redes de ensino e empresas compram turmas inteiras. A venda é consultiva e quase não depende de mídia.</p>
-            <span class="ft-now">Hoje: ainda não estruturado.</span>
-          </div>
-          <div class="ft-vis ft-vis-pink">
-            <div class="ft-ui" aria-hidden="true">
-              <div class="ft-ui-title"><span>Propostas institucionais<small>Exemplo de funil comercial</small></span></div>
-              <ul class="ft-ui-list">
-                <li>Secretaria de Educação · 60 <i class="ok">proposta enviada</i></li>
-                <li>Escola particular · 12 <i>em conversa</i></li>
-                <li>Empresa · NR-01 <i>próxima frente</i></li>
-              </ul>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div class="ft-panel">
-        <h3 class="ft-h3">Por onde começar: educação inclusiva</h3>
-        <p>O catálogo atual tem sete ofertas para seis públicos. Vender tudo ao mesmo tempo divide verba, atenção e mensagem. A recomendação é concentrar a primeira fase em educação inclusiva, por quatro motivos:</p>
-        <ul class="ft-reasons">
-          <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>O problema é grande e diário. O profissional de apoio enfrenta essas situações toda semana em sala.</li>
-          <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Existe pressão legal para que redes e escolas qualifiquem esses profissionais.</li>
-          <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Já há prova de demanda: mais de 300 alunos na primeira turma.</li>
-          <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>A escada é rápida de montar: formação de 200h, clube mensal e formações complementares, e contratos com redes de ensino.</li>
-        </ul>
-        <p>Teologia e comércio exterior continuam captando interessados nas listas de espera. NR-01 entra como segunda frente do motor institucional.</p>
-      </div>
-    </section>
-
-    <!-- ESCADA DE VALOR -->
-    <section class="ft-sec ft-sec-soft" id="ft-escada">
-      <h2 class="ft-h2"><span class="ft-ink">Cada aluno precisa de um próximo passo.</span> <span class="ft-soft">Hoje a jornada termina no certificado da formação.</span></h2>
-      <p class="ft-intro">Numa escada de valor, cada produto prepara a compra do próximo, e quem já confiou uma vez volta a comprar com um custo de anúncio muito menor.</p>
-      <ol class="ft-ladder">
-        <li class="ft-step ft-s0">
-          <span class="ft-label">Gratuito</span>
-          <b>R$ 0</b>
-          <p>Aula ao vivo sobre a nova lei do profissional de apoio, guia em PDF, Bússola do Futuro, episódios do Foco &amp; Propósito.</p>
-          <span class="ft-goal">Gera: contato no WhatsApp</span>
-        </li>
-        <li class="ft-step ft-s1">
-          <span class="ft-label">Entrada</span>
-          <b>R$ 199</b>
-          <p>Formação de Apoio para Inclusão e AEE, 200h, com aulas ao vivo e certificado da Faculdade do Futuro.</p>
-          <span class="ft-goal">Gera: primeiro pagamento e confiança</span>
-        </li>
-        <li class="ft-step ft-s2">
-          <span class="ft-tag">onde está o lucro</span>
-          <span class="ft-label">Continuidade</span>
-          <b>ex.: R$ 39/mês · R$ 197</b>
-          <p>Clube do Profissional de Apoio (modelos de PEI e relatórios, aula mensal ao vivo, comunidade) e formações complementares: TEA na escola, PEI na prática, comunicação alternativa.</p>
-          <span class="ft-goal">Gera: receita recorrente</span>
-        </li>
-        <li class="ft-step ft-s3">
-          <span class="ft-label">Institucional</span>
-          <b>sob proposta</b>
-          <p>Turmas fechadas para prefeituras e escolas, implantação de PEI na rede, Liggieri Academy.</p>
-          <span class="ft-goal">Gera: contratos</span>
-        </li>
-      </ol>
-      <p class="ft-note">Dois ajustes aumentam o ticket médio sem tráfego extra: um <em>order bump</em> no checkout (ex.: kit de modelos de PEI e relatórios por R$ 47) e a oferta do clube feita dentro da formação, na semana 8 e na entrega do certificado. Os preços da continuidade são ilustrativos. Como boa parte do público tem renda modesta, ticket baixo e recorrente tende a funcionar melhor que ticket alto.</p>
-    </section>
-
-    <!-- FUNIL -->
-    <section class="ft-sec" id="ft-funil">
-      <h2 class="ft-h2"><span class="ft-ink">O caminho de um desconhecido até a matrícula.</span> <span class="ft-soft">O funil roda o mês inteiro, e a aula inaugural ao vivo, que vocês já fazem, vira o evento de conversão de cada turma.</span></h2>
-      <ol class="ft-flow">
-        <li><h3 class="ft-h3">Atrair</h3><p>Anúncios no Instagram e Facebook, Google para quem já pesquisa o tema, vídeos curtos dos professores e cortes do podcast.</p><small>Meta Ads · Google Ads · Instagram · YouTube</small></li>
-        <li><h3 class="ft-h3">Capturar</h3><p>Página exclusiva para a isca, sem menu e com um único botão. Pede só nome e WhatsApp.</p><small>Landing page · formulário · pixel</small></li>
-        <li><h3 class="ft-h3">Nutrir</h3><p>Sequência de 5 a 7 mensagens: boas-vindas, conteúdo útil, convite para a aula ao vivo e lembretes no dia.</p><small>WhatsApp API oficial · e-mail · remarketing</small></li>
-        <li><h3 class="ft-h3">Converter</h3><p>Oferta na aula com prazo real, checkout FuturoPay e recuperação automática de Pix gerado e não pago.</p><small>FuturoPay · WhatsApp · CRM</small></li>
-        <li><h3 class="ft-h3">Ascender</h3><p>Boas-vindas bem feitas, grupo da turma e convite para o clube e as formações complementares no meio do curso e na certificação.</p><small>AVA · WhatsApp · e-mail</small></li>
-        <li><h3 class="ft-h3">Indicar</h3><p>Aluno indica colega da escola e ganha um benefício. Coordenadoras que fizeram o curso levam a proposta para a rede.</p><small>Cupom por aluno · depoimentos</small></li>
-      </ol>
-
-      <div class="ft-panel">
-        <h3 class="ft-h3">Lançamento ou perpétuo?</h3>
-        <p>Recomendação: modelo híbrido. A captação de contatos fica ligada o mês todo, e cada turma abre com uma janela curta de vendas em torno da aula ao vivo. Turmas mensais ou bimestrais substituem as aberturas esporádicas e tiram o faturamento dos picos.</p>
-        <p>Atenção à janela de janeiro a março, quando redes e escolas costumam contratar e designar profissionais de apoio para o ano letivo. A turma de janeiro deve ser a maior do ano.</p>
-      </div>
-
-      <div class="ft-quiz">
-        <div class="ft-quiz-txt">
-          <span class="ft-label">Variação a testar</span>
-          <h3 class="ft-h3" style="margin-top:6px">Quiz antes da página de vendas</h3>
-          <p>O anúncio leva a um teste curto, como “Qual é o seu nível de preparo para atuar como profissional de apoio pela nova lei?”, e só depois à página de vendas. O público é variado (profissionais de apoio, professores, coordenadores, quem quer entrar na área) e o quiz separa cada perfil antes da oferta.</p>
-          <ol class="ft-num">
-            <li>Anúncio: “Faça o teste em 2 minutos”</li>
-            <li>6 a 8 perguntas: função atual, tempo de atuação, situações de sala e 2 ou 3 perguntas sobre a lei e o PEI</li>
-            <li>Nome e WhatsApp pedidos antes de mostrar o resultado</li>
-            <li>Resultado em 3 níveis, com diagnóstico honesto do que falta</li>
-            <li>Página de vendas com título adaptado ao resultado</li>
-          </ol>
-          <p>Coordenadores e gestores identificados no quiz vão direto para o comercial institucional. A Bússola do Futuro mostra que a equipe já sabe construir esse tipo de ferramenta. O quiz roda em paralelo com o funil direto, e fica o que entregar o menor custo por aluno.</p>
-        </div>
-        <div class="ft-vis ft-vis-violet">
-          <div class="ft-ui" aria-hidden="true">
-            <div class="ft-meter" style="--w:37%;margin-top:0"><span><em style="font-style:normal">Teste de preparo</em><em style="font-style:normal">pergunta 3 de 8</em></span><div></div></div>
-            <p style="margin-top:14px;font-size:14px;font-weight:500;line-height:1.4">Quando a criança se desregula em sala, o que você costuma fazer?</p>
-            <div class="ft-opt">Tento acalmar conversando</div>
-            <div class="ft-opt">Chamo a professora ou a coordenação</div>
-            <div class="ft-opt is-on">Sigo um plano combinado com a equipe</div>
-            <div class="ft-opt">Ainda não sei o que fazer</div>
-            <div class="ft-ui-btn"><span>Próxima ›</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TRÁFEGO PAGO -->
-    <section class="ft-sec" id="ft-trafego">
-      <h2 class="ft-h2"><span class="ft-ink">Primeiro medir, depois investir.</span> <span class="ft-soft">E sempre na ordem certa.</span></h2>
-      <div class="ft-panel" style="margin-top:44px">
-        <h3 class="ft-h3">Antes do primeiro real em mídia</h3>
-        <ul class="ft-reasons">
-          <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Pixel da Meta com API de Conversões</li>
-          <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Google Analytics 4 e Google Tag Manager</li>
-          <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Evento de compra disparado só quando o Pix é confirmado</li>
-          <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>UTMs em todos os links de anúncio, bio e WhatsApp</li>
-          <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Planilha ou CRM que mostre de onde veio cada aluno</li>
-        </ul>
-      </div>
-
-      <div class="ft-rows">
-        <div><h3 class="ft-h3">Meta Ads<small>canal principal</small></h3><p>Três campanhas: captação para a aula ou o guia, remarketing para quem visitou a página de vendas ou assistiu aos vídeos, e público semelhante criado a partir da lista dos 300 alunos. Esse público semelhante tende a ser o melhor ativo de mídia que vocês têm hoje.</p></div>
-        <div><h3 class="ft-h3">Google Search<small>intenção alta</small></h3><p>Termos como “curso profissional de apoio escolar”, “curso AEE online” e “curso PEI na prática”. O clique custa mais, e quem pesquisa já quer comprar, principalmente quem precisa da qualificação para concorrer a uma vaga.</p></div>
-        <div><h3 class="ft-h3">YouTube<small>autoridade</small></h3><p>Aulas curtas dos professores e episódios do podcast. Serve como topo de funil e como remarketing barato.</p></div>
-      </div>
-
-      <h3 class="ft-sub">Quatro ângulos de criativo para os primeiros testes</h3>
-      <ol class="ft-num">
-        <li>O professor explica, em 60 segundos, o que muda na lei para o profissional de apoio.</li>
-        <li>Uma aluna da primeira turma conta como mudou a rotina em sala.</li>
-        <li>Situação real: “o aluno desregulou no meio da aula, e agora?”</li>
-        <li>Bastidores do lançamento na Câmara Municipal de Manhuaçu.</li>
-      </ol>
-
-      <h3 class="ft-sub">Verba em três fases</h3>
-      <div class="ft-table-wrap">
-        <table class="ft-table">
-          <thead><tr><th>Fase</th><th>Verba mensal</th><th>Objetivo</th><th>Avança quando</th></tr></thead>
-          <tbody>
-            <tr><td><b>Teste</b><small>meses 1–2</small></td><td class="ft-tnum">Verba enxuta</td><td>Descobrir custo por lead, conversão e criativos vencedores</td><td>Dois ou três criativos mantêm custo por lead estável</td></tr>
-            <tr><td><b>Validação</b><small>meses 3–4</small></td><td class="ft-tnum">R$ 8–15 mil</td><td>Fazer a formação pagar o anúncio</td><td>Receita da formação ≥ verba por 4 semanas seguidas</td></tr>
-            <tr><td><b>Escala</b><small>mês 5 em diante</small></td><td class="ft-tnum">R$ 20 mil+</td><td>Subir a verba 20–30% por semana mantendo o custo por aluno</td><td>Se o custo por aluno subir mais de 30%, volta um passo</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="ft-note">Faixas de referência. O orçamento definitivo sai dos números reais da fase de teste.</p>
-    </section>
-
-    <!-- SIMULADOR -->
-    <section class="ft-sec ft-sec-soft" id="ft-simulador">
-      <h2 class="ft-h2"><span class="ft-ink">A formação paga o anúncio.</span> <span class="ft-soft">A continuidade gera o lucro.</span></h2>
-      <p class="ft-intro">Ajuste os números. Os valores iniciais são hipóteses para um primeiro teste e devem ser trocados pelos dados reais depois de 30 dias de campanha.</p>
-      <div class="ft-sim">
-        <div class="ft-sim-panel">
-          <h3 class="ft-h3">Premissas</h3>
-          <div class="ft-fields">
-            <div class="ft-field"><label for="ft-invest">Investimento mensal em anúncios</label><output for="ft-invest" id="ft-o-invest"></output><input type="range" id="ft-invest" min="1000" max="50000" step="500" value="10000"></div>
-            <div class="ft-field"><label for="ft-cpl">Custo por lead</label><output for="ft-cpl" id="ft-o-cpl"></output><input type="range" id="ft-cpl" min="1" max="20" step="0.5" value="5"></div>
-            <div class="ft-field"><label for="ft-conv">Leads que compram a formação</label><output for="ft-conv" id="ft-o-conv"></output><input type="range" id="ft-conv" min="0.5" max="15" step="0.5" value="4"></div>
-            <div class="ft-field"><label for="ft-ticket">Preço da formação</label><output for="ft-ticket" id="ft-o-ticket"></output><input type="range" id="ft-ticket" min="99" max="999" step="10" value="199"></div>
-            <div class="ft-field"><label for="ft-clube">Alunos que assinam o clube</label><output for="ft-clube" id="ft-o-clube"></output><input type="range" id="ft-clube" min="0" max="60" step="1" value="25"></div>
-            <div class="ft-field"><label for="ft-mclube">Mensalidade do clube</label><output for="ft-mclube" id="ft-o-mclube"></output><input type="range" id="ft-mclube" min="19" max="99" step="5" value="39"></div>
-            <div class="ft-field"><label for="ft-perm">Permanência média no clube (meses)</label><output for="ft-perm" id="ft-o-perm"></output><input type="range" id="ft-perm" min="1" max="24" step="1" value="8"></div>
-            <div class="ft-field"><label for="ft-comp">Alunos que compram formação complementar</label><output for="ft-comp" id="ft-o-comp"></output><input type="range" id="ft-comp" min="0" max="40" step="1" value="15"></div>
-            <div class="ft-field"><label for="ft-cticket">Preço da formação complementar</label><output for="ft-cticket" id="ft-o-cticket"></output><input type="range" id="ft-cticket" min="97" max="497" step="10" value="197"></div>
-          </div>
-        </div>
-        <div class="ft-sim-panel is-out">
-          <h3 class="ft-h3">Resultado de um mês de anúncios</h3>
-          <dl class="ft-results">
-            <div><dt>Leads captados</dt><dd id="ft-r-leads"></dd></div>
-            <div><dt>Alunos na formação</dt><dd id="ft-r-alunos"></dd></div>
-            <div><dt>Custo por aluno</dt><dd id="ft-r-cac"></dd></div>
-            <div><dt>Receita da formação</dt><dd id="ft-r-form"></dd></div>
-            <div><dt>Assinantes do clube</dt><dd id="ft-r-socios"></dd></div>
-            <div><dt>Receita do clube (permanência média)</dt><dd id="ft-r-clube"></dd></div>
-            <div><dt>Receita de formações complementares</dt><dd id="ft-r-comp"></dd></div>
-            <div class="is-big"><dt>Receita total</dt><dd id="ft-r-total"></dd></div>
-            <div class="is-big"><dt>Retorno por R$ 1 investido</dt><dd id="ft-r-roas"></dd></div>
-          </dl>
-          <div class="ft-bars" aria-hidden="true">
-            <div class="ft-bar-row"><span>Investido</span><div class="ft-bar"><span class="ft-seg-invest" id="ft-b-invest"></span></div></div>
-            <div class="ft-bar-row"><span>Retorno</span><div class="ft-bar"><span class="ft-seg-form" id="ft-b-form"></span><span class="ft-seg-pos" id="ft-b-pos"></span></div></div>
-          </div>
-          <div class="ft-legend"><span><i class="ft-seg-invest"></i>Anúncios</span><span><i class="ft-seg-form"></i>Formação</span><span><i class="ft-seg-pos"></i>Continuidade</span></div>
-        </div>
-      </div>
-      <p class="ft-summary" id="ft-summary"></p>
-      <p class="ft-note">A conta considera só alunos novos vindos do anúncio. Os mais de 300 alunos da primeira turma já podem receber a oferta do clube e das formações complementares sem custo de mídia. Impostos, taxas de pagamento e custo de tutoria não estão incluídos.</p>
-    </section>
-
-    <!-- INSTITUCIONAL -->
-    <section class="ft-sec" id="ft-institucional">
-      <h2 class="ft-h2"><span class="ft-ink">Prefeituras e escolas compram turmas inteiras.</span> <span class="ft-soft">A mesma pressão legal que gera demanda individual gera demanda institucional.</span></h2>
-      <p class="ft-intro">Secretarias municipais de educação precisam qualificar dezenas de profissionais de apoio, e escolas particulares precisam formar suas equipes. Esse motor funciona por venda consultiva, com custo de mídia perto de zero.</p>
-      <div class="ft-stats">
-        <div class="ft-stat"><b>R$ 11.940</b><span>por município: 60 profissionais × R$ 199 (exemplo de conta)</span></div>
-        <div class="ft-stat is-grad"><b>R$ 119.400</b><span>com 10 municípios no ano, sem anúncio</span></div>
-      </div>
-      <ol class="ft-num" style="margin-top:32px;max-width:820px">
-        <li>Listar as secretarias de educação num raio de 150 km de Manhuaçu e começar pelas mais próximas.</li>
-        <li>Montar uma proposta de turma fechada, com relatório de frequência e portfólio de cada servidor entregue à secretaria.</li>
-        <li>Usar o lançamento na Câmara Municipal e os números da primeira turma como prova.</li>
-        <li>Validar com o jurídico a forma de contratação pública adequada a cada caso.</li>
-        <li>Repetir o modelo com NR-01 e segurança psicológica para empresas da região.</li>
-      </ol>
-    </section>
-
-    <!-- PRÓXIMOS PASSOS -->
-    <section class="ft-sec" id="ft-passos">
-      <h2 class="ft-h2"><span class="ft-ink">Próximos passos.</span> <span class="ft-soft">Quatro etapas, nesta ordem.</span></h2>
-      <ol class="ft-road">
-        <li>
-          <span class="ft-label">Etapa 1</span>
-          <h3 class="ft-h3">Destravar</h3>
-          <ul>
-            <li>Instalar pixel, API de Conversões, GA4 e evento de compra no FuturoPay</li>
-            <li>Gravar 10 a 15 depoimentos em vídeo de alunos da primeira turma</li>
-            <li>Revisar as citações legais da página de vendas</li>
-            <li>Definir o segundo produto (clube, formações complementares ou ambos) e o preço</li>
-            <li>Ativar Instagram e YouTube e linkar no site</li>
-          </ul>
-        </li>
-        <li>
-          <span class="ft-label">Etapa 2</span>
-          <h3 class="ft-h3">Montar a base</h3>
-          <ul>
-            <li>Reescrever a página do curso na nova ordem</li>
-            <li>Landing page exclusiva para a isca, com um único objetivo</li>
-            <li>Sequência de WhatsApp e e-mail até o último dia de inscrição</li>
-            <li>Recuperação de Pix não pago e de checkout abandonado</li>
-            <li>Primeiro lote de 12 a 20 criativos</li>
-            <li>Home vira hub institucional, e cada produto ganha página própria</li>
-          </ul>
-        </li>
-        <li>
-          <span class="ft-label">Etapa 3</span>
-          <h3 class="ft-h3">Primeira campanha</h3>
-          <ul>
-            <li>Meta Ads: captação, remarketing e público semelhante</li>
-            <li>Google Search para termos de intenção</li>
-            <li>Quiz rodando em paralelo com o funil direto</li>
-            <li>Aula ao vivo e abertura da próxima turma</li>
-            <li>Prospecção ativa de 20 secretarias municipais</li>
-          </ul>
-        </li>
-        <li>
-          <span class="ft-label">Etapa 4</span>
-          <h3 class="ft-h3">Ajustar e escalar</h3>
-          <ul>
-            <li>Cortar o que não converte e reforçar o que converte</li>
-            <li>Oferta do clube para os alunos da formação e para a base da primeira turma</li>
-            <li>Programa de indicação entre colegas de escola</li>
-            <li>Reunião de resultados e decisão da verba do trimestre seguinte</li>
-          </ul>
-        </li>
-      </ol>
-    </section>
-
-    <!-- INDICADORES -->
-    <section class="ft-sec" id="ft-indicadores">
-      <h2 class="ft-h2"><span class="ft-ink">O que acompanhar toda semana.</span> <span class="ft-soft">Uma métrica-norte e os sinais que mostram onde o funil está vazando.</span></h2>
-      <div class="ft-table-wrap" style="margin-top:44px">
-        <table class="ft-table">
-          <thead><tr><th>Métrica</th><th>O que mostra</th><th>Meta inicial</th></tr></thead>
-          <tbody>
-            <tr class="is-north"><td><b>Receita média por aluno</b><small>métrica-norte · formação + continuidade</small></td><td>Se a escada está funcionando</td><td>Definir após a primeira oferta do clube</td></tr>
-            <tr><td>Custo por lead</td><td>Eficiência dos anúncios</td><td>Medir na fase de teste</td></tr>
-            <tr><td>Conclusão do quiz</td><td>Se as perguntas prendem a atenção</td><td>Medir na fase de teste</td></tr>
-            <tr><td>Comparecimento na aula ao vivo</td><td>Força da nutrição</td><td>Medir na fase de teste</td></tr>
-            <tr><td>Conversão de lead em aluno</td><td>Força da oferta</td><td>Medir na fase de teste</td></tr>
-            <tr><td>Pix gerado × Pix pago</td><td>Vazamento no checkout</td><td>Acompanhar toda semana</td></tr>
-            <tr><td>Custo por aluno</td><td>Quanto custa cada matrícula</td><td>Abaixo do preço da formação</td></tr>
-            <tr><td>Conclusão da formação</td><td>Qualidade da entrega</td><td>Medir na turma 2</td></tr>
-            <tr><td>Ascensão para clube e formações complementares</td><td>Valor de longo prazo do aluno</td><td>Medir na primeira oferta</td></tr>
-            <tr><td>Valor do aluno ÷ custo por aluno</td><td>Saúde do negócio</td><td class="ft-tnum">acima de 3×</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- DECISÕES -->
-    <section class="ft-sec" id="ft-decisoes">
-      <h2 class="ft-h2"><span class="ft-ink">O que a diretoria precisa decidir.</span> <span class="ft-soft">Em ordem de impacto, com a equipe mínima para rodar o plano.</span></h2>
-      <div class="ft-two">
-        <div class="ft-box">
-          <h3 class="ft-h3">Decisões</h3>
-          <ol class="ft-num">
-            <li>Qual será o segundo produto (clube mensal, formações complementares ou ambos) e com que preço.</li>
-            <li>Orçamento de mídia para a fase de teste.</li>
-            <li>Quem é o responsável interno pelo digital, com meta e autonomia.</li>
-            <li>Dados da primeira turma: quantos concluíram, de onde vieram e quanto custou cada aluno. Sem o custo por aluno, toda projeção é estimativa.</li>
-            <li>Capacidade de tutoria: quantos alunos por turma sem perder qualidade.</li>
-            <li>Política comercial para prefeituras e escolas: preço institucional e número mínimo de alunos.</li>
-          </ol>
-        </div>
-        <div class="ft-box">
-          <h3 class="ft-h3">Equipe mínima</h3>
-          <ul class="ft-team">
-            <li>Responsável interno pelo digital</li>
-            <li>Gestor de tráfego</li>
-            <li>Social media e editor de vídeo</li>
-            <li>Comercial no WhatsApp</li>
-            <li>Designer e copywriter (freelancers)</li>
-            <li>Professores como rosto da marca</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- PARCERIA -->
-    <section class="ft-sec ft-sec-soft" id="ft-parceria">
-      <h2 class="ft-h2"><span class="ft-ink">Proposta de parceria.</span> <span class="ft-soft">30% de comissão sobre cada venda. A gente só ganha quando a Futuro Tech vende.</span></h2>
-      <p class="ft-intro">Em vez de mensalidade fixa de agência, a remuneração acompanha o resultado. Se o plano não gerar vendas, a Futuro Tech não paga pela execução.</p>
-      <div class="ft-stats">
-        <div class="ft-stat is-grad"><b>30%</b><span>de comissão sobre cada venda feita pelos canais digitais da parceria</span></div>
-        <div class="ft-stat"><b>R$ 59,70</b><span>por matrícula na formação de R$ 199. Os outros R$ 139,30 ficam com a Futuro Tech.</span></div>
-      </div>
-      <div class="ft-two">
-        <div class="ft-box">
-          <h3 class="ft-h3">O que fica com a gente</h3>
-          <ul class="ft-team">
-            <li>Estratégia, funil e quiz</li>
-            <li>Páginas de vendas e landing pages</li>
-            <li>Criativos e roteiros dos anúncios</li>
-            <li>Gestão de tráfego no Meta Ads e no Google</li>
-            <li>Sequências de WhatsApp e e-mail</li>
-            <li>Rastreamento e relatório de resultados</li>
-          </ul>
-        </div>
-        <div class="ft-box">
-          <h3 class="ft-h3">O que fica com a Futuro Tech</h3>
-          <ul class="ft-team">
-            <li>Cursos, aulas e professores</li>
-            <li>Atendimento e tutoria dos alunos</li>
-            <li>Verba de anúncios, paga direto às plataformas</li>
-            <li>Acesso ao FuturoPay para conferência das vendas</li>
-            <li>Depoimentos e materiais da primeira turma</li>
-          </ul>
-        </div>
-      </div>
-      <p class="ft-note">A comissão é apurada todo mês pelo relatório de vendas do FuturoPay. Prazo, produtos incluídos e regras de reembolso ficam definidos em contrato.</p>
-    </section>
-
-    <!-- ARTES: ANTES E DEPOIS + PROPOSTA -->
-    <section class="ft-sec" id="ft-artes">
-      <h2 class="ft-h2"><span class="ft-ink">Artes da Escola e da Faculdade.</span> <span class="ft-soft">O mesmo banner do Vestibular Online, antes e depois do redesign.</span></h2>
-      <div class="ft-ba-legend" aria-hidden="true"><span>Antes</span><span>Depois</span></div>
-      <div class="ft-ba" id="ft-ba">
-        <img src="https://boechatcreative.github.io/futuro-tech/assets/vestibular-depois.webp" alt="Depois: banner do Vestibular Online redesenhado, com fundo claro, laranja da marca e estudante segurando pasta da Faculdade do Futuro" width="1920" height="720" loading="lazy" decoding="async">
-        <img class="ft-ba-before" src="https://boechatcreative.github.io/futuro-tech/assets/vestibular-antes.webp" alt="Antes: banner original do Vestibular Online, com fundo cinza escuro e título em 3D" width="1920" height="720" loading="lazy" decoding="async">
-        <span class="ft-ba-line" aria-hidden="true"></span>
-        <span class="ft-ba-knob" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18"><path d="M6.5 4.5L2 9l4.5 4.5M11.5 4.5L16 9l-4.5 4.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois do banner">
-      </div>
-      <p class="ft-ba-hint">Arraste para comparar as duas versões.</p>
-
-      <h3 class="ft-sub">O que mudou</h3>
-      <ol class="ft-num" style="max-width:820px">
-        <li><span><b>Uma mensagem principal.</b> Antes, o título em 3D, o texto lateral e as caixas disputavam a atenção. Agora “O Vestibular Online é a chave” conduz a leitura.</span></li>
-        <li><span><b>Cores da marca.</b> O cinza escuro deu lugar a um fundo claro com o laranja do logo da Faculdade.</span></li>
-        <li><span><b>Oferta e ação juntas.</b> A bolsa de até 100% e o botão de inscrições abertas ficam no mesmo bloco, perto do contato.</span></li>
-        <li><span><b>Revisão do texto.</b> Na arte original, o site aparecia como “faculdadedofruivo.com.br”. Na nova, o endereço está correto.</span></li>
-      </ol>
-
-      <div class="ft-plan">
-        <div class="ft-plan-price">
-          <span class="ft-label">Proposta comercial</span>
-          <b>R$ 2.000<small>/mês</small></b>
-          <p>Artes para a Escola do Futuro e para a Faculdade do Futuro. Quantidade de peças por mês a combinar.</p>
-        </div>
-        <div class="ft-plan-list">
-          <h3 class="ft-h3">O que entra</h3>
-          <ul class="ft-reasons">
-            <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Posts, carrosséis e stories para o Instagram</li>
-            <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Campanhas de vestibular, matrícula e eventos</li>
-            <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Banners para os sites das duas instituições</li>
-            <li><span class="ft-chip"><svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2l2.6 2.6L11 4.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Cada peça adaptada aos formatos em que vai ser usada</li>
-          </ul>
-        </div>
-      </div>
-      <p class="ft-note">O volume mensal é definido com vocês a partir do calendário de campanhas da Escola e da Faculdade. Esta proposta é separada da parceria da Futuro Tech.</p>
-    </section>
-    <script>
-    (function () {
-      var ba = document.getElementById('ft-ba');
-      if (!ba) return;
-      var r = ba.querySelector('input');
-      r.addEventListener('input', function () { ba.style.setProperty('--pos', r.value + '%'); });
-    })();
-    </script>
-
   </div>
 
   <!-- FECHAMENTO -->
@@ -837,7 +375,7 @@
     <div class="ft-frame">
       <h2 class="ft-h2"><span class="ft-ink">Produto, professores e demanda já existem.</span> <span class="ft-soft">Com as seis decisões tomadas, a primeira fase pode começar.</span></h2>
       <div class="ft-cta-row">
-        <a class="ft-btn ft-btn-primary" href="#ft-parceria">Ver a proposta de parceria <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="ft-btn ft-btn-primary" href="parceria/#ft-parceria">Ver a proposta de parceria <svg class="ft-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
   </section>
@@ -850,58 +388,14 @@
 
 <script>
 (function () {
-  var root = document.querySelector('.ftlp');
-  if (!root || !document.getElementById('ft-invest')) return;
-  var brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
-  var brl2 = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  var int = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 0 });
-  var pct = function (v) { return v.toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + '%'; };
-  var money = function (v) { return brl.format(v); };
-  var ids = ['invest', 'cpl', 'conv', 'ticket', 'clube', 'mclube', 'perm', 'comp', 'cticket'];
-  var labels = {
-    invest: money, ticket: money, mclube: money, cticket: money,
-    cpl: function (v) { return brl2.format(v); },
-    conv: pct, clube: pct, comp: pct,
-    perm: function (v) { return int.format(v); }
-  };
-  function $(id) { return document.getElementById('ft-' + id); }
-  function val(id) { return parseFloat($(id).value) || 0; }
-  function update() {
-    ids.forEach(function (id) { $('o-' + id).textContent = labels[id](val(id)); });
-    var invest = val('invest'), cpl = val('cpl'), conv = val('conv') / 100, ticket = val('ticket');
-    var clube = val('clube') / 100, mclube = val('mclube'), perm = val('perm'), comp = val('comp') / 100, cticket = val('cticket');
-    var leads = cpl > 0 ? invest / cpl : 0;
-    var alunos = leads * conv;
-    var recForm = alunos * ticket;
-    var cac = alunos > 0 ? invest / alunos : 0;
-    var socios = alunos * clube;
-    var recClube = socios * mclube * perm;
-    var recComp = alunos * comp * cticket;
-    var recPos = recClube + recComp;
-    var total = recForm + recPos;
-    var roasF = invest > 0 ? recForm / invest : 0;
-    var roasT = invest > 0 ? total / invest : 0;
-    $('r-leads').textContent = int.format(leads);
-    $('r-alunos').textContent = int.format(alunos);
-    $('r-cac').textContent = brl.format(cac);
-    $('r-form').textContent = brl.format(recForm);
-    $('r-socios').textContent = int.format(socios);
-    $('r-clube').textContent = brl.format(recClube);
-    $('r-comp').textContent = brl.format(recComp);
-    $('r-total').textContent = brl.format(total);
-    $('r-roas').textContent = brl2.format(roasT);
-    var max = Math.max(invest, total) || 1;
-    $('b-invest').style.width = (invest / max * 100) + '%';
-    $('b-form').style.width = (recForm / max * 100) + '%';
-    $('b-pos').style.width = (recPos / max * 100) + '%';
-    var s = 'Com essas premissas, a formação devolve ' + brl2.format(roasF) + ' para cada R$ 1 investido';
-    s += roasF >= 1 ? ' e já paga o anúncio sozinha. ' : ' e ainda não paga o anúncio sozinha. ';
-    s += 'Somando clube e formações complementares, cada R$ 1 vira ' + brl2.format(roasT) + '.';
-    $('summary').textContent = s;
-  }
-  ids.forEach(function (id) { $(id).addEventListener('input', update); });
-  update();
+  var top = document.querySelector('.ftlp .ft-top'), btn = top && top.querySelector('.ft-menu-btn');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var open = top.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
 })();
 </script>
+<script>(function(){var m={'ft-diagnostico':'diagnostico','ft-pagina':'diagnostico','ft-motores':'estrategia','ft-escada':'estrategia','ft-funil':'estrategia','ft-trafego':'trafego','ft-simulador':'trafego','ft-institucional':'institucional','ft-passos':'plano','ft-indicadores':'plano','ft-decisoes':'plano','ft-parceria':'parceria','ft-artes':'artes'};var h=location.hash.slice(1);if(m[h])location.replace(m[h]+'/#'+h);})();</script>
 </body>
 </html>
